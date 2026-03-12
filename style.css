@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url(assets/css/home.css);
-@import url(assets/css/sobre.css);
-@import url(assets/css/habilidades.css);
-@import url(assets/css/projetos.css);
-
 *,
 *::before,
 *::after {
@@ -215,10 +209,8 @@ h1 {
   font-family: var(--font-span);
 }
 .contact__link:hover {
-  border-color: var(--rose);
-  color: var(--rose);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(224, 172, 157, 0.12);
+  box-shadow: 0 8px 25px rgba(226, 216, 157, 0.12);
 }
 .contact__link svg {
   width: 15px;
@@ -230,7 +222,7 @@ h1 {
   background: var(--surface);
   border-radius: 6px;
   padding: 1rem;
-  border: 1px solid rgba(224, 172, 157, 0.15);
+  border: 1px solid rgba(224, 157, 215, 0.15);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
@@ -322,13 +314,24 @@ h1 {
   background: rgba(224, 157, 194, 0.04);
   border-radius: 0 6px 6px 0;
 }
-
+/* SEÇÃO CONTATO */
+.contact__title {
+  font-size: clamp(2rem, 10vw, 5rem);
+  margin-bottom: 0;
+  max-width: 700px;
+}
+.contact__text {
+  font-size: 1.25rem;
+  max-width: 500px;
+}
 #contato,
 footer {
   background-color: var(--surface2);
+  text-align: center;
 }
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 2rem 6rem;
   font-size: 0.6rem;
@@ -362,5 +365,8 @@ footer {
   }
   .hero__card {
     padding: 2.5rem;
+  }
+  footer {
+    flex-direction: row;
   }
 }
