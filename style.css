@@ -9,18 +9,15 @@
 }
 
 :root {
-  --blue: #c8ff00;
-  --blue-dim: rgba(226, 223, 74, 0.15);
-  --rose: #ff8dbc;
-  --rose2: #ca7c8f;
-  --peach: #f5d1c5;
-  --gray: #9b9b9b;
+  --color-primary: #ffff33;
+  --color-dim: rgba(226, 224, 99, 0.15);
+  --color-secondary: #ff3399;
+  --color-sub: #da5682;
   --bg: #050505;
   --surface: #0e0e0e;
-  --surface2: #141414;
   --border: rgba(224, 157, 194, 0.12);
   --text: #f0ede9;
-  --muted: #6b6b6b;
+  --muted: #8a8a8a;
 
   --font-heading: "Cormorant Garamond", serif;
   --font-span: "DM Mono", monospace;
@@ -47,7 +44,6 @@ h4 {
 
 h2 {
   font-size: clamp(1rem, 10vw, 3rem);
-  color: var(--color-primary);
   margin-bottom: 1.5rem;
 }
 p {
@@ -55,13 +51,12 @@ p {
 }
 .container {
   width: 100%;
-  max-width: 88rem;
+  max-width: 95rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 3rem 1rem; /* mutavel */
 }
 
 .btn {
@@ -82,13 +77,18 @@ p {
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   font-family: var(--font-span);
-  color: var(--rose2);
+  color: var(--color-sub);
 }
 .cp {
-  color: var(--blue);
+  color: var(--color-primary);
 }
 .cs {
-  color: var(--rose);
+  color: var(--color-secondary);
+}
+#skills,
+#contato,
+#sobre {
+  background-color: var(--surface);
 }
 /* HEADER */
 header {
@@ -101,13 +101,17 @@ header {
   background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 10rem;
+  padding: 1rem 7rem;
   z-index: 1000;
 }
 .logo {
   font-weight: 700;
   font-size: clamp(0.875rem, 5vw, 2rem);
-  background-image: linear-gradient(125deg, var(--rose2), var(--blue));
+  background-image: linear-gradient(
+    125deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -117,7 +121,7 @@ nav {
 .navbar {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
 .navbar li a {
@@ -126,12 +130,12 @@ nav {
   color: var(--muted);
 }
 .navbar li a:hover {
-  color: var(--rose);
+  color: var(--color-sub);
 }
 .navbar {
   scroll-target-group: auto;
   li a:target-current {
-    color: var(--rose);
+    color: var(--color-secondary);
   }
 }
 .italic {
@@ -141,7 +145,7 @@ nav {
 
 .span-name {
   color: transparent;
-  -webkit-text-stroke: 1px var(--rose);
+  -webkit-text-stroke: 1px var(--color-primary);
 }
 .hero__content {
   display: flex;
@@ -155,14 +159,18 @@ h1 {
   width: 100px;
   height: 2px;
   margin-block: 1.6rem;
-  background: linear-gradient(90deg, var(--rose), var(--blue));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 .hero__text {
   font-size: clamp(0.875rem, 5vw, 1.25rem);
 }
 .accent {
-  color: var(--rose);
-  font-weight: 500;
+  color: var(--color-sub);
+  font-weight: 600;
 }
 .hero__btns {
   display: flex;
@@ -171,7 +179,7 @@ h1 {
   margin-block: 2rem;
 }
 .btn__primary {
-  background-color: var(--blue);
+  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   color: var(--bg);
@@ -182,12 +190,12 @@ h1 {
   box-shadow: 0 10px 30px rgba(216, 226, 74, 0.3);
 }
 .btn__contact {
-  border: 1.5px solid var(--rose);
-  color: var(--rose);
+  border: 1.5px solid var(--color-sub);
+  color: var(--color-sub);
 }
 .btn__contact:hover {
-  background: rgba(224, 172, 157, 0.07);
-  box-shadow: 0 10px 30px rgba(224, 172, 157, 0.15);
+  background: rgba(224, 157, 196, 0.07);
+  box-shadow: 0 10px 30px rgba(224, 157, 204, 0.15);
 }
 .contact__list {
   display: flex;
@@ -204,7 +212,7 @@ h1 {
   border: 1px solid rgba(226, 223, 74, 0.2);
   border-radius: 5px;
   background: rgba(226, 216, 74, 0.08);
-  color: var(--blue);
+  color: var(--color-primary);
   font-size: 0.875rem;
   font-family: var(--font-span);
 }
@@ -217,7 +225,7 @@ h1 {
   height: 15px;
 }
 .hero__card {
-  max-width: 600px;
+  max-width: 650px;
   width: 100%;
   background: var(--surface);
   border-radius: 6px;
@@ -234,7 +242,11 @@ h1 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--rose), var(--blue));
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
 }
 .hero__card::after {
   content: "";
@@ -293,6 +305,49 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
+
+/* SKILLS */
+.skills__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+}
+.skills__cards-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.65rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+.skills__cards-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.skills__cards-card:hover {
+  background: var(--border);
+}
+.skills__cards-card:hover::before {
+  transform: scaleX(1);
+}
+.skills-title {
+  font-size: 1.8rem;
+}
+.skills-line {
+  padding-top: 0.4rem;
+  font-size: 0.75rem;
+  border-top: 1.5px solid var(--border);
+  margin-top: 1rem;
+}
 /* PROJETOS */
 .cards {
   display: flex;
@@ -303,8 +358,10 @@ h1 {
   display: flex;
   gap: 2rem;
 }
+
+/* SEÇÃO SOBRE */
 .about-quote {
-  border-left: 2px solid var(--rose);
+  border-left: 2px solid var(--color-secondary);
   padding: 0.9rem 1.2rem;
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -314,21 +371,19 @@ h1 {
   background: rgba(224, 157, 194, 0.04);
   border-radius: 0 6px 6px 0;
 }
-/* SEÇÃO CONTATO */
+/* SEÇÃO CONTATO E FOOTER */
 .contact__title {
   font-size: clamp(2rem, 10vw, 5rem);
   margin-bottom: 0;
   max-width: 700px;
+  text-align: center;
 }
 .contact__text {
   font-size: 1.25rem;
   max-width: 500px;
-}
-#contato,
-footer {
-  background-color: var(--surface2);
   text-align: center;
 }
+
 footer {
   display: flex;
   flex-direction: column;
@@ -353,18 +408,19 @@ footer {
     flex-direction: row;
     justify-content: space-between;
   }
-
   .hero__content {
     align-items: start;
     width: 45%;
   }
-
   .hero__btns {
     flex-direction: row;
     gap: 1.5rem;
   }
   .hero__card {
     padding: 2.5rem;
+  }
+  .skills__cards {
+    grid-template-columns: repeat(3, 1fr);
   }
   footer {
     flex-direction: row;
