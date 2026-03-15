@@ -7,7 +7,12 @@
   list-style: none;
   text-decoration: none;
 }
-
+/* acessibiladade -tab*/
+a:focus-visible {
+  outline: 3px solid var(--color-sub);
+  outline-offset: 4px;
+}
+/* A borda só aparece quando o usuário navega usando o teclado (Tab) */
 :root {
   --color-primary: #ffff33;
   --color-dim: rgba(226, 224, 99, 0.15);
@@ -22,6 +27,14 @@
   --font-heading: "Cormorant Garamond", serif;
   --font-span: "DM Mono", monospace;
   --font-base: "Plus Jakarta Sans", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 body {
   background: var(--bg);
@@ -100,6 +113,7 @@ header {
   align-items: center;
   background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   padding: 1rem 7rem;
   z-index: 1000;
@@ -115,24 +129,24 @@ header {
   -webkit-background-clip: text;
   color: transparent;
 }
-nav {
+.nav {
   display: none;
 }
-.navbar {
+.nav-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.navbar li a {
+.nav-list li a {
   font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--muted);
 }
-.navbar li a:hover {
+.nav-list li a:hover {
   color: var(--color-sub);
 }
-.navbar {
+.nav-list {
   scroll-target-group: auto;
   li a:target-current {
     color: var(--color-secondary);

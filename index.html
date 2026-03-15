@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Portfólio de Niedja Araújo, desenvolvedora front-end focada em acessibilidade, performance e interfaces modernas."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Niedja Araújo | Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Criando interfaces mobile-first e acessíveis com HTML5, CSS3, JavaScript e React."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,41 +23,54 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Niedja Araújo | Developer Front-End</title>
+    <title>Niedja Araújo | Desenvolvedora Front-End</title>
   </head>
   <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
     <!-- CABEÇALHO -->
     <header>
-      <a href="" class="logo">< n.araujo /></a>
-
-      <nav>
-        <ul class="navbar">
+      <a href="#hero" class="logo">&lt; n.araujo /&gt;</a>
+      <nav class="nav">
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menu de navegação"
+        >
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-list">
           <li>
-            <a href="#hero">Inicio</a>
+            <a href="#hero" class="nav__link">Inicio</a>
           </li>
           <li>
-            <a href="#skills"> Skills</a>
+            <a href="#skills" class="nav__link"> Skills</a>
           </li>
           <li>
-            <a href="#projetos"> Projetos</a>
+            <a href="#projetos" class="nav__link"> Projetos</a>
           </li>
           <li>
-            <a href="#sobre"> Sobre</a>
+            <a href="#sobre" class="nav__link"> Sobre</a>
           </li>
           <li>
-            <a href="#contato"> Contato</a>
+            <a href="#contato" class="nav__link"> Contato</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <!-- SEÇÃO HERO -->
-      <section id="hero">
+      <section id="hero" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero__content">
             <p class="subtitle">Front-End Developer Junior</p>
-            <h1>Niedja <span class="span-name">Araújo</span></h1>
+            <h1 id="hero-title">
+              Niedja <span class="span-name">Araújo</span>
+            </h1>
             <div class="hero__line"></div>
             <p class="hero__text">
               Criando interfaces
@@ -69,37 +95,39 @@
               </a>
               <a
                 href="https://wa.me/5581992548924"
+                rel="noopener"
                 target="_blank"
                 class="btn btn__contact"
+                aria-label="Entre em contato via WhatsApp (abre em nova aba)"
                 >Entre em Contato</a
               >
             </div>
           </div>
 
-          <div class="hero__card">
-            <p class="card__title">Olá, prazer! ✨</p>
+          <aside class="hero__card" aria-label="Informações de apresentação">
+            <span class="card__title">Olá, prazer! ✨</span>
             <ul class="card__list">
-              <li class="card-row">
-                <span class="card-icon">🎯</span>
-                <span class="card-label">Foco</span>
-                <span class="card-val">Front-End · Acessibilidade</span>
+              <li class="card__item">
+                <span class="card__icon" aria-hidden="true">🎯</span>
+                <strong class="card__label">Foco</strong>
+                <span class="card__value">Front-End · Acessibilidade</span>
               </li>
-              <li class="card-row">
-                <span class="card-icon">⚙️</span>
-                <span class="card-label">Stack</span>
-                <span class="card-val">HTML · CSS · JS · React</span>
+              <li class="card__item">
+                <span class="card__icon" aria-hidden="true">⚙️</span>
+                <strong class="card__label">Stack</strong>
+                <span class="card__value">HTML · CSS · JS · React</span>
               </li>
-              <li class="card-row">
-                <span class="card-icon">💼</span>
-                <span class="card-label">Experiência</span>
-                <span class="card-val"
+              <li class="card__item">
+                <span class="card__icon" aria-hidden="true">💼</span>
+                <strong class="card__label">Experiência</strong>
+                <span class="card__value"
                   >10+ anos com atendimento ao público</span
                 >
               </li>
-              <li class="card-row">
-                <span class="card-icon">📍</span>
-                <span class="card-label">Localização</span>
-                <span class="card-val">Pernambuco, Brasil</span>
+              <li class="card__item">
+                <span class="card__icon" aria-hidden="true">📍</span>
+                <strong class="card__label">Localização</strong>
+                <span class="card__value">Pernambuco, Brasil</span>
               </li>
             </ul>
 
@@ -164,7 +192,7 @@
                 >
               </li>
             </ul>
-          </div>
+          </aside>
         </div>
       </section>
 
@@ -240,11 +268,13 @@
       </section>
 
       <!-- SEÇÃO PROJETOS -->
-      <section id="projetos">
+      <section id="projetos" aria-labelledby="projects-title">
         <div class="container">
           <div class="container__header">
             <p class="subtitle">// O que eu construí</p>
-            <h2>Projetos em <span class="italic cp">Destaque</span></h2>
+            <h2 id="projects-title">
+              Projetos em <span class="italic cp">Destaque</span>
+            </h2>
           </div>
 
           <div class="projetos__cards">
@@ -258,7 +288,10 @@
                   navegação otimizada, cta para conversão, smooth scrolling e
                   foco em UX e acessibilidade.
                 </p>
-                <ul class="projetos__card-tags">
+                <ul
+                  class="projetos__card-tags"
+                  aria-label="Tecnologias utilizadas"
+                >
                   <li class="projetos__card-tag">HTML5</li>
                   <li class="projetos__card-tag">CSS3</li>
                   <li class="projetos__card-tag">JavaScript</li>
@@ -292,7 +325,10 @@
                   autismo no aprendizado da escrita. Canvas API, eventos de
                   mouse/toque e renderização dinâmica de caracteres.
                 </p>
-                <ul class="projetos__card-tags">
+                <ul
+                  class="projetos__card-tags"
+                  aria-label="Tecnologias utilizadas"
+                >
                   <li class="projetos__card-tag">HTML5</li>
                   <li class="projetos__card-tag">CSS3</li>
                   <li class="projetos__card-tag">JavaScript</li>
