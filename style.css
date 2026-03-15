@@ -96,6 +96,21 @@ h2 {
 .cs {
   color: var(--color-secondary);
 }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
 #skills,
 #contato,
 #sobre {
@@ -106,19 +121,21 @@ header {
   position: sticky;
   top: 0;
   border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 7rem;
+  padding: 1.2rem 1rem;
   z-index: 1000;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .logo {
   font-weight: 700;
-  font-size: clamp(0.875rem, 5vw, 2rem);
+  font-size: clamp(0.8rem, 3vw, 2rem);
   background-image: linear-gradient(
     125deg,
     var(--color-secondary),
@@ -127,29 +144,26 @@ header {
   -webkit-background-clip: text;
   color: transparent;
 }
-.nav {
-  display: none;
-}
+
 .nav__list {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
+  scroll-target-group: auto;
+  li a:target-current {
+    color: var(--color-secondary);
+  }
 }
 
 .nav__link {
-  font-size: 0.75rem;
+  font-size: clamp(0.5rem, 3vw, 0.9rem);
   text-transform: uppercase;
   color: var(--muted);
 }
 .nav__link:hover {
   color: var(--color-sub);
 }
-.nav__list {
-  scroll-target-group: auto;
-  li a:target-current {
-    color: var(--color-secondary);
-  }
-}
+
 .italic {
   font-style: italic;
 }
@@ -582,19 +596,21 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   border-top: 1px solid var(--border);
+  color: var(--muted);
 }
 
 @media (width>= 1024px) {
-  .nav {
-    display: block;
+  header {
+    padding-inline: 8rem;
   }
+
   .nav__list,
   #hero .container,
   .hero__btns,
   .sobre__content,
   footer {
     flex-direction: row;
-    gap: 1.5rem;
+    gap: 2.5rem;
     justify-content: space-between;
   }
   .container {
