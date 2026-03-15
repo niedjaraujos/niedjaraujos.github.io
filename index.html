@@ -104,8 +104,10 @@
             </div>
           </div>
 
-          <aside class="hero__card" aria-label="Informações de apresentação">
-            <span class="card__title">Olá, prazer! ✨</span>
+          <aside class="hero__card" aria-labelledby="card-greeting">
+            <span class="card__title" id="card-greeting"
+              >Olá, prazer! <span aria-hidden="true">✨</span></span
+            >
             <ul class="card__list">
               <li class="card__item">
                 <span class="card__icon" aria-hidden="true">🎯</span>
@@ -197,69 +199,75 @@
       </section>
 
       <!-- SEÇÃO HABILIDADES TÉCNICAS -->
-      <section id="skills">
+      <section id="skills" aria-labelledby="skills-title">
         <div class="container">
           <div class="container__header">
-            <p class="subtitle">// Habilidades técnicas</p>
-            <h2>Stack & <span class="cs italic">Ferramentas</span></h2>
+            <p class="subtitle" aria-hidden="true">// Habilidades técnicas</p>
+            <h2 id="skills-title">
+              Stack & <span class="cs italic">Ferramentas</span>
+            </h2>
           </div>
 
           <ul class="skills__cards">
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">Linguagens</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">Linguagens</h3>
               <p>
                 Domínio de linguagens modernas para desenvolvimento web, criando
                 aplicações interativas e escaláveis.
               </p>
-              <p class="skills-line">
+              <p class="skills__card-line">
                 JavaScript ES6+ · TypeScript · HTML5 · CSS3
               </p>
             </li>
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">CSS & Responsividade</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">CSS & Responsividade</h3>
               <p>
                 Estilização e animações de interfaces com CSS moderno, design
                 responsivo e adaptáveis para desktop, tablet e mobile.
               </p>
-              <p class="skills-line">
+              <p class="skills__card-line">
                 Mobile-First · Flexbox · CSS Grid · BEM · Media Queries
               </p>
             </li>
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">JavaScript & React</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">JavaScript & React</h3>
               <p>
                 Desenvolvimento de interfaces modernas com React, código
                 reutilizável e maior escalabilidade para aplicações web.
               </p>
-              <p class="skills-line">
+              <p class="skills__card-line">
                 Manipulação DOM · APIs REST · React Hooks · Canvas API
               </p>
             </li>
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">Acessibilidade & Performance</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">
+                Acessibilidade & Performance
+              </h3>
               <p>
                 Implementação de boas práticas de acessibilidade e otimização de
                 performance alinhadas aos padrões modernos da web.
               </p>
-              <p class="skills-line">HTML Semântico · WAI-ARIA · Lighthouse</p>
+              <p class="skills__card-line">
+                HTML Semântico · WAI-ARIA · Lighthouse
+              </p>
             </li>
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">Ferramentas</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">Ferramentas</h3>
               <p>
                 Uso de ferramentas modernas que otimizam o fluxo de
                 desenvolvimento, versionamento, depuração e colaboração.
               </p>
-              <p class="skills-line">
+              <p class="skills__card-line">
                 Git · GitHub · Figma · VS Code · DevTools
               </p>
             </li>
-            <li class="skills__cards-card">
-              <h3 class="cp skills-title">Soft Skills</h3>
+            <li class="skills__card">
+              <h3 class="cp skills__card-title">Soft Skills</h3>
               <p>
                 Habilidades interpessoais com foco em resolução eficiente de
                 desafios e aprendizado contínuo para evolução constante.
               </p>
-              <p class="skills-line">
+              <p class="skills__card-line">
                 Comunicação · Trabalho em equipe · Análise crítica · Organização
               </p>
             </li>
@@ -271,19 +279,20 @@
       <section id="projetos" aria-labelledby="projects-title">
         <div class="container">
           <div class="container__header">
-            <p class="subtitle">// O que eu construí</p>
+            <p class="subtitle" aria-hidden="true">// O que eu construí</p>
             <h2 id="projects-title">
               Projetos em <span class="italic cp">Destaque</span>
             </h2>
           </div>
 
           <div class="projetos__cards">
-            <div class="projetos__cards-card">
-              <span class="number-card">01</span>
-              <div class="card-content">
+            <article class="projetos__card">
+              <span class="projetos__card-number">01</span>
+
+              <div class="projetos__card-content">
                 <p class="subtitle">Freelance · Landing Page</p>
-                <h3 class="projetos__title">Landing Page Jurídica</h3>
-                <p class="projetos__text">
+                <h3 class="projetos__card-title">Landing Page Jurídica</h3>
+                <p class="projetos__card-text">
                   Landing page Mobile-First e responsiva para advogada, com
                   navegação otimizada, cta para conversão, smooth scrolling e
                   foco em UX e acessibilidade.
@@ -300,7 +309,9 @@
               <a
                 href="https://stefane-brito.vercel.app/"
                 target="_blank"
-                class="link-svg"
+                rel="noopener"
+                class="projetos__card-link"
+                aria-label="Ver projeto Landing Page Jurídica (abre em nova aba)"
               >
                 <svg
                   width="24"
@@ -313,14 +324,15 @@
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
-            </div>
+            </article>
 
-            <div class="projetos__cards-card">
-              <span class="number-card">02</span>
-              <div class="card-content">
+            <article class="projetos__card">
+              <span class="projetos__card-number">02</span>
+
+              <div class="projetos__card-content">
                 <p class="subtitle">Projeto Pessoal · Web App</p>
-                <h3 class="projetos__title">App de Caligrafia</h3>
-                <p class="projetos__text">
+                <h3 class="projetos__card-title">App de Caligrafia</h3>
+                <p class="projetos__card-text">
                   Aplicação web interativa criada para auxiliar meu filho com
                   autismo no aprendizado da escrita. Canvas API, eventos de
                   mouse/toque e renderização dinâmica de caracteres.
@@ -339,7 +351,9 @@
               <a
                 href="https://new-app-gg.vercel.app/"
                 target="_blank"
-                class="link-svg"
+                rel="noopener"
+                class="projetos__card-link"
+                aria-label="Ver projeto Caligrafia Digital (abre em nova aba)"
               >
                 <svg
                   width="24"
@@ -352,7 +366,7 @@
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
-            </div>
+            </article>
           </div>
         </div>
       </section>
