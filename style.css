@@ -19,9 +19,9 @@ a:focus-visible {
   --color-secondary: #ff3399;
   --color-sub: #da5682;
   --bg: #050505;
-  --surface: #0e0e0e;
+  --surface: #111111;
   --border: rgba(224, 157, 194, 0.12);
-  --text: #f0ede9;
+  --text: #e0e0e0;
   --muted: #8a8a8a;
 
   --font-heading: "Cormorant Garamond", serif;
@@ -59,12 +59,10 @@ h2 {
   font-size: clamp(1rem, 10vw, 3rem);
   margin-bottom: 1.5rem;
 }
-p {
-  color: var(--muted);
-}
+
 .container {
   width: 100%;
-  max-width: 95rem;
+  max-width: 88rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -132,21 +130,21 @@ header {
 .nav {
   display: none;
 }
-.nav-list {
+.nav__list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.nav-list li a {
+.nav__link {
   font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--muted);
 }
-.nav-list li a:hover {
+.nav__link:hover {
   color: var(--color-sub);
 }
-.nav-list {
+.nav__list {
   scroll-target-group: auto;
   li a:target-current {
     color: var(--color-secondary);
@@ -181,11 +179,9 @@ h1 {
 }
 .hero__text {
   font-size: clamp(0.875rem, 5vw, 1.25rem);
+  color: var(--muted);
 }
-.accent {
-  color: var(--color-sub);
-  font-weight: 600;
-}
+
 .hero__btns {
   display: flex;
   flex-direction: column;
@@ -284,22 +280,20 @@ h1 {
   color: var(--muted);
   margin-bottom: 1.5rem;
 }
-.card-row {
+.card__item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.8rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.card-row:last-of-type {
-  border-bottom: none;
-}
-.card-icon {
+
+.card__icon {
   width: 20px;
   text-align: center;
   font-size: 0.95rem;
 }
-.card-label {
+.card__label {
   font-family: "DM Mono", monospace;
   font-size: 0.62rem;
   color: var(--muted);
@@ -308,7 +302,7 @@ h1 {
   width: 78px;
   flex-shrink: 0;
 }
-.card-val {
+.card__value {
   color: var(--text);
   font-weight: 400;
   font-size: 0.84rem;
@@ -323,11 +317,12 @@ h1 {
 
 /* SKILLS */
 .skills__cards {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
 }
-.skills__cards-card {
+.skills__card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -336,7 +331,7 @@ h1 {
   overflow: hidden;
   transition: background 0.4s;
 }
-.skills__cards-card::before {
+.skills__card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -348,27 +343,28 @@ h1 {
   transform-origin: left;
   transition: transform 0.5s;
 }
-.skills__cards-card:hover {
+.skills__card:hover {
   background: #141414;
 }
-.skills__cards-card:hover::before {
+.skills__card:hover::before {
   transform: scaleX(1);
 }
-.skills-title {
+.skills__card-title {
   font-size: 1.8rem;
 }
-.skills-line {
+.skills__card-line {
   padding-top: 0.4rem;
   font-size: 0.75rem;
   border-top: 1.5px solid var(--border);
   margin-top: 1rem;
+  color: var(--muted);
 }
 /* PROJETOS */
 
 .projetos__cards {
   grid-template-columns: 1fr;
 }
-.projetos__cards-card {
+.projetos__card {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -384,28 +380,32 @@ h1 {
   transition: border-color 0.3s;
   transition: transform 0.4s;
 }
-.projetos__cards-card:hover {
+.projetos__card:hover {
   border-color: var(--color-secondary);
   transform: translateX(4px);
 }
 
-.projetos__cards-card:hover .number-card {
+.projetos__card:hover .number-card {
   color: var(--color-secondary);
 }
-.number-card {
+
+.projetos__card-number {
   font-weight: 700;
   font-size: 3rem;
   transition: color 0.3s;
 }
 
-.card-content {
+.projetos__card-content {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.projetos__title {
+.projetos__card-title {
   font-size: clamp(1rem, 5vw, 2rem);
+}
+.projetos__card-text {
+  color: var(--muted);
 }
 .projetos__card-tags {
   margin-top: 1rem;
@@ -420,13 +420,13 @@ h1 {
   border: 1px solid var(--color-dim);
   padding: 4px 8px;
 }
-.link-svg {
+.projetos__card-link {
   margin-top: 1rem;
   color: var(--color-dim);
   border: 1px solid var(--color-dim);
   padding: 0.4rem 0.8rem;
 }
-.projetos__cards-card:hover .link-svg {
+.projetos__card:hover .projetos__card-link {
   background-color: var(--color-secondary);
   color: #050505;
 }
@@ -444,14 +444,12 @@ h1 {
     margin-bottom: 1rem;
   }
 }
-strong {
-  color: var(--color-sub);
-}
+
 .about-quote {
   border-left: 3px solid var(--color-secondary);
-  padding: 0.9rem 1.2rem;
+  padding: 0.9rem 1.5rem;
   margin-top: 2rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--muted);
   font-style: italic;
   line-height: 1.75;
@@ -477,7 +475,7 @@ strong {
   flex-direction: column;
   gap: 2px;
 }
-.edu-card {
+.edu__card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -488,7 +486,7 @@ strong {
   transition: background 0.3s;
   overflow: hidden;
 }
-.edu-card::after {
+.edu__card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -500,30 +498,30 @@ strong {
   z-index: 0;
 }
 
-.edu-card:hover::after {
+.edu__card:hover::after {
   transform: scaleX(1);
 }
-.edu-card:hover .course-name,
-.edu-card:hover .edu-year {
+.edu__card:hover .edu__card-name,
+.edu__card:hover .edu__card-year {
   color: var(--color-primary);
 }
-.edu-num {
+.edu__card-num {
   color: var(--muted);
   font-size: 0.75rem;
 }
-.course-name {
-  font-size: clamp(1rem, 5vw, 2.5rem);
+.edu__card-name {
+  font-size: clamp(1rem, 5vw, 2.2rem);
   transition: color 0.3s;
 }
 
-.course-inst {
+.edu__card-inst {
   color: var(--muted);
 }
-.edu-tags-inline {
+.edu__card-tags {
   display: flex;
   gap: 1rem;
 }
-.edu-tag-inline {
+.edu__tag {
   font-size: 0.58rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -531,12 +529,12 @@ strong {
   border: 1px solid var(--border);
   padding: 5px 10px;
 }
-.edu-year {
+.edu__card-year {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   color: var(--muted);
 }
-.last-row {
+.last-card {
   border-bottom: 1px solid var(--border);
 }
 
@@ -546,7 +544,6 @@ strong {
   position: relative;
   overflow: hidden;
 }
-
 #contato::after {
   content: "";
   position: absolute;
@@ -588,10 +585,10 @@ footer {
 }
 
 @media (width>= 1024px) {
-  nav {
+  .nav {
     display: block;
   }
-  .navbar,
+  .nav__list,
   #hero .container,
   .hero__btns,
   .sobre__content,
@@ -615,23 +612,23 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
   .sobre__text {
-    margin-right: 10rem;
+    margin-right: 16rem;
   }
-  .edu-card {
+  .edu__card {
     display: grid;
     grid-template-columns: 80px 1fr 400px 140px;
     gap: 5rem;
   }
-  .projetos__cards-card {
+  .projetos__card {
     display: grid;
     grid-template-columns: 80px 1fr auto;
     gap: 5rem;
   }
-  .projetos__text {
+  .projetos__card-text {
     max-width: 700px;
     margin-right: 10rem;
   }
-  .card-content {
+  .projetos__card-content {
     text-align: start;
     flex: 1;
   }

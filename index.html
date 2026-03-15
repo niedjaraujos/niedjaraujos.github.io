@@ -42,7 +42,7 @@
           <span class="nav__toggle-bar" aria-hidden="true"></span>
           <span class="nav__toggle-bar" aria-hidden="true"></span>
         </button>
-        <ul class="nav-list">
+        <ul class="nav__list">
           <li>
             <a href="#hero" class="nav__link">Inicio</a>
           </li>
@@ -74,9 +74,8 @@
             <div class="hero__line"></div>
             <p class="hero__text">
               Criando interfaces
-              <span class="accent">mobile-first e acessíveis</span> com HTML5,
-              CSS3, JavaScript e React. Tecnologia com propósito — para pessoas
-              reais.
+              <span class="cs">mobile-first e acessíveis</span> com HTML5, CSS3,
+              JavaScript e React. Tecnologia com propósito — para pessoas reais.
             </p>
 
             <div class="hero__btns">
@@ -372,14 +371,14 @@
       </section>
 
       <!-- SEÇÃO SOBRE MIM -->
-      <section id="sobre">
+      <section id="sobre" aria-labelledby="about-title">
         <div class="container">
           <div class="container__header">
             <p class="subtitle">// sobre mim</p>
           </div>
           <div class="sobre__content">
             <div class="sobre__text">
-              <h2>
+              <h2 id="about-title">
                 Visão centrada no
                 <span class="italic cp"> usuário</span>
               </h2>
@@ -387,30 +386,38 @@
               <p>
                 Sou desenvolvedora front-end em formação, especializada em criar
                 experiências digitais
-                <strong>inclusivas e acessíveis</strong>. Trabalho com HTML5
-                semântico, CSS moderno e JavaScript na construção de interfaces
-                Mobile-First.
+                <span class="cs">inclusivas e acessíveis</span>. Trabalho com
+                HTML5 semântico, CSS moderno e JavaScript na construção de
+                interfaces Mobile-First.
               </p>
               <p>
                 Minha trajetória de
-                <strong>10 anos no atendimento ao público</strong> me trouxe a
-                capacidade de ouvir e decifrar o que o usuário realmente
-                precisa.
+                <span span class="cs">10 anos no atendimento ao público</span>
+                me trouxe a capacidade de ouvir e decifrar o que o usuário
+                realmente precisa.
               </p>
               <p>
                 Hoje aplico essa experiência para construir interfaces que não
                 sejam apenas visualmente atraentes, mas também claras e
-                <strong>centradas no usuário.</strong>
+                <span span class="cs">centradas no usuário.</span>
               </p>
               <div class="about-quote">
-                "Acredito que a interface é a voz visual da marca. Cada detalhe
-                tipográfico, cada transição, cada cor — tudo comunica."
+                <blockquote cite="https://niedjaraujos.github.io/">
+                  <p>
+                    "Acredito que a interface é a voz visual da marca. Cada
+                    detalhe tipográfico, cada transição, cada cor — tudo
+                    comunica."
+                  </p>
+                </blockquote>
               </div>
             </div>
             <div class="sobre__image">
               <img
                 src="./9.webp"
                 alt="Foto de Niedja Araujo, uma mulher jovem com cabelos cacheados e batom vermelho"
+                loading="lazy"
+                width="400"
+                height="400"
               />
             </div>
           </div>
@@ -418,89 +425,93 @@
       </section>
 
       <!-- SEÇÃO APRENDIZADO -->
-      <section id="educacao">
+      <section id="educacao" aria-labelledby="edu-title">
         <div class="container">
           <div class="container__header">
-            <p class="subtitle">// formação & cursos</p>
-            <h2>Educação & <span class="italic cp">Aprendizado</span></h2>
+            <p class="subtitle" aria-hidden="true">// formação & cursos</p>
+            <h2 id="edu-title">
+              Educação & <span class="italic cp">Aprendizado</span>
+            </h2>
           </div>
-          <div class="edu__container">
-            <div class="edu-card">
-              <span class="edu-num italic">01</span>
-              <div class="edu-course">
-                <h3 class="course-name">
+
+          <ul class="edu__container">
+            <li class="edu__card">
+              <span class="edu__card-num italic" aria-hidden="true">01</span>
+              <div class="edu__card-header">
+                <h3 class="edu__card-name">
                   Análise e Desenvolvimento de Sistemas
                 </h3>
-                <span class="course-inst">Gran Faculdade</span>
+                <span class="edu__card-inst">Gran Faculdade</span>
               </div>
 
-              <div class="edu-tags-inline">
-                <span class="edu-tag-inline">Fundamentos</span>
-                <span class="edu-tag-inline">Algoritmos</span>
-                <span class="edu-tag-inline">Engenharia</span>
+              <div class="edu__card-tags" aria-label="Competências estudadas">
+                <span class="edu__tag">Fundamentos</span>
+                <span class="edu__tag">Algoritmos</span>
+                <span class="edu__tag">Engenharia</span>
               </div>
-              <span class="edu-year">2027</span>
-            </div>
-            <div class="edu-card">
-              <span class="edu-num italic">02</span>
+              <time class="edu__card-year" datetime="2027">2027</time>
+            </li>
 
-              <div class="edu-course">
-                <h3 class="course-name">Curso Formação Full Stack</h3>
-                <span class="course-inst">B7Web</span>
-              </div>
+            <li class="edu__card">
+              <span class="edu__card-num italic" aria-hidden="true">02</span>
 
-              <div class="edu-tags-inline">
-                <span class="edu-tag-inline">Fundamentos</span>
-                <span class="edu-tag-inline">Front-End</span>
-                <span class="edu-tag-inline">React</span>
-              </div>
-              <span class="edu-year">2025</span>
-            </div>
-            <div class="edu-card">
-              <span class="edu-num italic">03</span>
-
-              <div class="edu-course">
-                <h3 class="course-name">Desenvolvimento Full Stack</h3>
-                <span class="course-inst">Vai Na Web </span>
+              <div class="edu__card-header">
+                <h3 class="edu__card-name">Curso Formação Full Stack</h3>
+                <span class="edu__card-inst">B7Web</span>
               </div>
 
-              <div class="edu-tags-inline">
-                <span class="edu-tag-inline">React </span>
-                <span class="edu-tag-inline">HTML,CSS & JS</span>
-                <span class="edu-tag-inline">Node.js</span>
+              <div class="edu__card-tags" aria-label="Competências estudadas">
+                <span class="edu__tag">Fundamentos</span>
+                <span class="edu__tag">Front-End</span>
+                <span class="edu__tag">React</span>
               </div>
-              <span class="edu-year">2025</span>
-            </div>
-            <div class="edu-card last-row">
-              <span class="edu-num italic">04</span>
-              <div class="edu-course">
-                <h3 class="course-name">
-                  Oracle Next Education T6 — Front-End
-                </h3>
-                <span class="course-inst">Alura </span>
+              <time class="edu__card-year" datetime="2025">2025</time>
+            </li>
+            <li class="edu__card">
+              <span class="edu__card-num italic" aria-hidden="true">03</span>
+
+              <div class="edu__card-header">
+                <h3 class="edu__card-name">Desenvolvimento Full Stack</h3>
+                <span class="edu__card-inst">Vai Na Web </span>
               </div>
 
-              <div class="edu-tags-inline">
-                <span class="edu-tag-inline">React</span>
-                <span class="edu-tag-inline">Front-End</span>
-                <span class="edu-tag-inline">Lógica de programação</span>
+              <div class="edu__card-tags" aria-label="Competências estudadas">
+                <span class="edu__tag">React </span>
+                <span class="edu__tag">HTML,CSS & JS</span>
+                <span class="edu__tag">Node.js</span>
               </div>
-              <span class="edu-year">2024</span>
-            </div>
-          </div>
+              <time class="edu__card-year" datetime="2025">2025</time>
+            </li>
+            <li class="edu__card last-card">
+              <span class="edu__card-num italic" aria-hidden="true">04</span>
+              <div class="edu__card-header">
+                <h3 class="edu__card-name">Next Education T6 Front-End</h3>
+                <span class="edu__card-inst">Alura - Oracle</span>
+              </div>
+
+              <div class="edu__card-tags" aria-label="Competências estudadas">
+                <span class="edu__tag">React</span>
+                <span class="edu__tag">Front-End</span>
+                <span class="edu__tag">Lógica de programação</span>
+              </div>
+              <time class="edu__card-year" datetime="2024">2024</time>
+            </li>
+          </ul>
         </div>
       </section>
 
       <!-- SEÇÃO CONTATO -->
-      <section id="contato">
+      <section id="contato" aria-labelledby="contact-title">
         <div class="container">
-          <p class="subtitle cp">// Contato</p>
-          <h2 class="contact__title">
+          <p class="subtitle cp" aria-hidden="true">// Contato</p>
+          <h2 class="contact__title" id="contact-title">
             Vamos <span class="italic cs"> construir</span> algo sólido juntos?
           </h2>
+
           <p class="contact__text">
             Estou aberta a oportunidades, freelances, parcerias estratégicas e
-            trocas de experiência. Me chama! <span class="cs">✦</span>
+            trocas de experiência. Me chama!
+            <span class="cs" aria-hidden="true">✦</span>
           </p>
 
           <ul class="contact__list">
@@ -508,6 +519,7 @@
               <a
                 href="https://github.com/niedjaraujos"
                 target="_blank"
+                rel="noopener"
                 class="contact__link"
               >
                 <svg
@@ -527,6 +539,7 @@
               <a
                 href="https://www.linkedin.com/in/niedjaaraujos/"
                 target="_blank"
+                rel="noopener"
                 class="contact__link"
               >
                 <svg
@@ -591,10 +604,10 @@
     <!-- FOOTER -->
     <footer>
       <p>
-        © 2025 <span class="cp">Niedja Araujo</span>. Feito com HTML, CSS &amp;
+        © 2026 <span class="cp">Niedja Araujo</span>. Feito com HTML, CSS &amp;
         JS.
       </p>
-      <p>Pernambuco <span class="cp">·</span> Brasil</p>
+      <p>Pernambuco <span class="cp" aria-hidden="true">·</span> Brasil</p>
     </footer>
 
     <script src="script.js"></script>
