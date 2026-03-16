@@ -100,7 +100,7 @@ h2 {
 .skip-link {
   display: block;
   position: fixed;
-  top: -42px;
+  top: -70px;
   left: 40%;
   background: linear-gradient(
     to right,
@@ -112,7 +112,7 @@ h2 {
   z-index: 99999;
 }
 .skip-link:focus {
-  top: 0;
+  top: 1px;
 }
 #skills,
 #contato,
