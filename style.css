@@ -487,11 +487,17 @@ h1 {
   padding: 4px 10px;
 }
 .projetos__card-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
   white-space: nowrap;
-  gap: 0.5rem;
   color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projetos__card:hover .projetos__card-link {
+  transform: translateY(-4px);
+  text-shadow: 0 0 8px rgba(255, 255, 51, 0.6);
 }
 
 /* SEÇÃO SOBRE */
