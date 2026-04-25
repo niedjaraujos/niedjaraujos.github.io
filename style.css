@@ -31,7 +31,6 @@ a:focus-visible {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
-
 }
 body {
   background: var(--bg);
@@ -40,7 +39,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
 
-    -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -64,7 +63,7 @@ h2 {
 
 .container {
   width: 100%;
-  max-width: 88rem;
+  max-width: 80rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
