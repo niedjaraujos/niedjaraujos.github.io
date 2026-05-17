@@ -13,6 +13,7 @@ a:focus-visible {
   outline-offset: 4px;
 }
 /* A borda só aparece quando o usuário navega usando o teclado (Tab) */
+
 :root {
   --color-primary: #ffff33;
   --color-dim: rgba(226, 224, 99, 0.15);
@@ -63,7 +64,7 @@ h2 {
 
 .container {
   width: 100%;
-  max-width: 80rem;
+  max-width: 90rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -680,13 +681,10 @@ footer {
     gap: 2.5rem;
     justify-content: space-between;
   }
-  #hero .container {
-    padding-block: 8rem;
-  }
-  .container {
-    padding-block: 6rem;
-  }
 
+  .container {
+    padding-block: 4rem;
+  }
   .hero__content {
     align-items: start;
     width: 45%;
